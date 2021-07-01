@@ -578,7 +578,7 @@ if [ "$Audit3_5" = "1" ]; then
 	chmod -R 440 /var/audit
 	chown root:wheel /etc/security/audit_control
 	chmod 400 /etc/security/audit_control
-	"$(date -u)" "3.3 remediated" | tee -a "$logfile"	
+	echo "$(date -u)" "3.3 remediated" | tee -a "$logfile"	
 fi
 
 
