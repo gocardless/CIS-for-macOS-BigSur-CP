@@ -698,7 +698,7 @@ if [ "$Audit2_6_1" = "1" ]; then
 		CheckForiCloudAccount="$($Defaults read "$UserHomeDirectory/Library/Preferences/MobileMeAccounts" Accounts | /usr/bin/grep -c 'AccountDescription = iCloud')"
 		# If client fails, then note category in audit file
 		if [[ "$CheckForiCloudAccount" -gt "0" ]] ; then
-			/bin/echo "* 2.6.1 $EachUser has an iCloud account configured" >> "$auditfilelocation"
+			/bin/echo "* 2.6.1 User has an iCloud account configured" >> "$auditfilelocation"
 			echo "$(date -u)" "2.6.1 fix $EachUser iCloud account" | tee -a "$logFile"; else
 			echo "$(date -u)" "2.6.1 passed $EachUser" #| tee -a "$logFile"
 		fi
