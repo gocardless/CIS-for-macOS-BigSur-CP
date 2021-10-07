@@ -54,8 +54,8 @@ hardwareUUID="$(/usr/sbin/system_profiler SPHardwareDataType | grep "Hardware UU
 
 logFile="/Library/Application Support/SecurityScoring/remediation.log"
 
-osVersion="$(sw_vers -productversion)"
-if [ "$osVersion" < 11 ]; then
+osMajorVersion="$(sw_vers -productVersion | cut -d. -f1)"
+if [ "$osMajorVersion" -lt 11 ]; then
 	echo "This script does not support Catalina. Please use https://github.com/jamf/CIS-for-macOS-Catalina-CP instead"
 	exit 0
 fi
